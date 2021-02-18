@@ -1,0 +1,112 @@
+config:
+    name: testcase description
+    variables: {}
+    verify: false
+teststeps:
+-   name: 查询未审核商品
+    request:
+        cookies:
+            Authorization: "${get_authorization()}"
+            appId: "${get_appId()}"
+        headers:
+            Accept: application/json, text/plain, */*
+            Accept-Encoding: gzip, deflate
+            Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+            Authorization: "${get_authorization()}"
+            Content-Type: application/json;charset=UTF-8
+        json:
+            current: 1
+            needPage: true
+            orderBy: ''
+            pages: 0
+            parame: []
+            selectParame: []
+            selectParameter:
+                approveName: ''
+                approveSubStatus: '4'
+                belongDepartmentIdList: ''
+                categoryIdList: ''
+                chooseUserName: 李国龙
+                createDateEnd: ''
+                createDateStart: ''
+                infringementTimeEnd: ''
+                infringementTimeStart: ''
+                isSale: '0'
+                presaleTimeEnd: ''
+                presaleTimeStart: ''
+                productNo: ''
+                tag: ''
+                testSubStatus: ''
+            size: 10
+        method: POST
+        url: http://121.14.41.140:5683/api/bamboo/pdSpu/pageList
+    extract:
+    -   spuId: content.data.records[0].id
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 200
+    -   eq:
+        - body.msg
+        - 操作成功
+-   name: 审核商品
+    request:
+        cookies:
+            Authorization: "${get_authorization()}"
+            appId: "${get_appId()}"
+        headers:
+            Accept: application/json, text/plain, */*
+            Accept-Encoding: gzip, deflate
+            Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+            Access-Control-Max-Age: '86000'
+            Authorization: "${get_authorization()}"
+            Connection: keep-alive
+            Content-Length: '556'
+            Content-Type: application/json;charset=UTF-8
+        json:
+            approveInfringementDto:
+                approveImageVoList: null
+                approveResult: null
+                approveSpuDetailId: null
+                createDate: null
+                createId: null
+                createName: null
+                deleted: null
+                id: null
+                imageApprove: 1
+                imageRemark: null
+                infringementLevel: null
+                infringementType: null
+                modifiedDate: null
+                modifiedId: null
+                modifiedName: null
+                priceApprove: 1
+                priceRemark: null
+                remark: null
+                repeatApprove: 1
+                repeatRemark: null
+                spuId: null
+                titleApprove: 1
+                titleRemark: null
+                warehouseApprove: 1
+                warehouseRemark: null
+            spuChangeOrderId: null
+            spuId: $spuId
+        method: POST
+        url: http://121.14.41.140:5683/api/bamboo/approveSpu/submitInfringementApprove
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 200
+    -   eq:
+        - body.data
+        - true
+    -   eq:
+        - body.msg
+        - 操作成功
