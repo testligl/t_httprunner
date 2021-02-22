@@ -1,0 +1,27 @@
+config:
+    name: 创建商品
+
+teststeps:
+-
+    name: 创建设计款
+    testcase: testapi\publish_design.yml
+-
+    name: 预售审核
+    testcase: testapi\saleApprove.yml
+
+-
+    name: 创建扒图款
+    testcase: testapi\publish_mapping.yml
+-
+    name: 预售审核
+    testcase: testapi\saleApprove.yml
+
+-
+    name: 商品审核
+    testcase: testapi\submitInfringementApprove.yml
+
+-
+    name: 商品审核
+    testcase: testapi\submitInfringementApprove.yml
+
+

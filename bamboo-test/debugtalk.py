@@ -3,7 +3,7 @@ import re
 
 from httprunner import __version__
 
-cookies = 'appId=1352475338966638594; Authorization=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMzM0NTEyNjUzODU1MDgwNDUwIiwiZW50ZXJwcmlzZU51bWJlciI6IjAwMjUiLCJvcmdhbml6YXRpb25hbElkIjoiNjM3Y2JjYjU1NTNkNDNlOTk3MzFmMGE1Y2Y2NDRmNTIiLCJvcmdhbml6YXRpb25hbE5hbWUiOiLns7vnu5_ov5DokKXpg6giLCJ1c2VyQ2F0ZWdvcnkiOjAsInN1YiI6IuadjuWbvem-mSIsImlzcyI6Im9yZGVycGx1cy1jbGllbnQiLCJpYXQiOjE2MTM3MDAwNjMsImF1ZCI6Im9yZGVycGx1cyIsImV4cCI6MTYxNDMwNDgwMywibmJmIjoxNjEzNzAwMDAzfQ.BL9bhmDz2wNBDt5Xy0NW8pG1EsP68MukRCsoFziBNhs;'
+cookies = 'appId=1352475338966638594; Authorization=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMzM0NTEyNjUzODU1MDgwNDUwIiwiZW50ZXJwcmlzZU51bWJlciI6IjAwMjUiLCJvcmdhbml6YXRpb25hbElkIjoiNjM3Y2JjYjU1NTNkNDNlOTk3MzFmMGE1Y2Y2NDRmNTIiLCJvcmdhbml6YXRpb25hbE5hbWUiOiLns7vnu5_ov5DokKXpg6giLCJ1c2VyQ2F0ZWdvcnkiOjAsInN1YiI6IuadjuWbvem-mSIsImlzcyI6Im9yZGVycGx1cy1jbGllbnQiLCJpYXQiOjE2MTM5NzI4MDYsImF1ZCI6Im9yZGVycGx1cyIsImV4cCI6MTYxNDU3NzU0NiwibmJmIjoxNjEzOTcyNzQ2fQ.yd1sdbSoNX-V15ElHc_nk90CyNGf1MaL4c8JqD0LY_0;'
 
 
 def get_httprunner_version():
@@ -39,5 +39,5 @@ def get_appId():
     appId = re.findall(re.compile('appId=(.*?);'),cookies)
     return appId[0]
 
-print(get_appId())
-print(get_authorization())
+# print(get_appId())
+# print(get_authorization())

@@ -1,7 +1,5 @@
 config:
   name: testcase description
-  variables:
-      
   base_url: http://121.14.41.140:5683
   variables:
     get_authorization: ${get_authorization()}
