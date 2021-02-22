@@ -6,5 +6,5 @@ config:
 teststeps:
 -
     name: 查询测试状态参数化
-    testcase: testcases\pdSpu_pageList.yml
+    testcase: testapi\pdSpu_pageList.yml
 
