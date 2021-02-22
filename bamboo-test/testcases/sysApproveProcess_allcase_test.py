@@ -24,7 +24,7 @@ class TestCaseSysapproveprocessAllcase(HttpRunner):
         "param",
         Parameters(
             {
-                "sputype-spu-spuid-needPresale-needInfringement-type": [
+                "sysApproveProcessType-spu-spuid-needPresale-needInfringement-type": [
                     ["先发布-设计款-首次发布", "SPF1VLRUE2J", "1362960215432306689", 1, 1, 1],
                     ["先发布-扒图款-首次发布", "SPW1JSHN667", "1362960222839447554", 1, 1, 1],
                     ["先发布-设计款-首次发布", "SPF1VLRUE2J", "1362960215432306689", 1, 1, 2],
